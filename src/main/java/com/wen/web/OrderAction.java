@@ -49,7 +49,7 @@ public class OrderAction {
 	
 	@RequestMapping("/test")
 	public String test(Order porder, Model model) {
-		logger.debug("debug11");
+		logger.debug("debug112");
 		System.out.println(orderService.getTestJdbc());
 		
 		porder.getClass();
