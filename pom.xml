@@ -61,7 +61,7 @@
 	</build>
 	
 	<properties>
-		<spring.version>3.2.9.RELEASE</spring.version>
+		<spring.version>4.3.4.RELEASE</spring.version>
 		<slf4j.version>1.6.4</slf4j.version>
 	</properties>
 
@@ -114,23 +114,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.25</version>
-		</dependency>
-
 		<!-- if you enable @AspectJ style AOP in spring. -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -265,13 +248,34 @@
 		    <artifactId>spring-data-mongodb</artifactId>
 		    <version>1.2.0.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		
 		<dependency>
 		    <groupId>org.log4mongo</groupId>
 		    <artifactId>log4mongo-java</artifactId>
 		    <version>0.7.4</version>
 		</dependency>
-				
+	
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>	
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9</version>
+		</dependency>	
 
 	</dependencies>
 </project>

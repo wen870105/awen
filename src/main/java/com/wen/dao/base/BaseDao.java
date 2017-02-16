@@ -18,4 +18,7 @@ public interface BaseDao {
 
 	public <T> List<T> findList_(Object t);
 
+	public <T> int queryPageCount(Object t) ;
+	
+	public <T> List<T> queryPage(Object t) ;
 }

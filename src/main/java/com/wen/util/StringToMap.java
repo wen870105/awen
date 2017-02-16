@@ -12,7 +12,7 @@ import java.util.Map;
 public class StringToMap {
 	
 	/**
-	 * 字符串转为MAP,key value使用","分割
+	 * 字符串转为MAP,key value使用"="分割
 	 * @param keyAndVals
 	 * @return
 	 */
@@ -23,8 +23,8 @@ public class StringToMap {
 		
 		Map<String,String> map = new HashMap<String, String>();
 		for(String kv : keyAndVals){
-			if(kv.indexOf(",")>=0){
-				String[] ret = kv.split(","); 
+			if(kv.indexOf("=")>=0){
+				String[] ret = kv.split("="); 
 				map.put(ret[0], ret[1]);
 			}
 		}
@@ -43,8 +43,8 @@ public class StringToMap {
 		
 		Map<Integer,String> map = new HashMap<Integer, String>();
 		for(String kv : keyAndVals){
-			if(kv.indexOf(",")>=0){
-				String[] ret = kv.split(","); 
+			if(kv.indexOf("=")>=0){
+				String[] ret = kv.split("="); 
 				map.put(Integer.valueOf(ret[0]), ret[1]);
 			}
 		}

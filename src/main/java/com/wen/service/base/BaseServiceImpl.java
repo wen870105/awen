@@ -3,6 +3,8 @@ package com.wen.service.base;
 import java.util.List;
 
 import com.wen.dao.base.BaseDao;
+import com.wen.domain.base.BaseDomain;
+import com.wen.domain.base.Page;
 
 /**
  * 
@@ -47,6 +49,18 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	@Override
 	public BaseDao getDao() {
 		throw new IllegalArgumentException("当前Service的BaseDao为空");
+	}
+
+	@Override
+	public <P extends BaseDomain> Page<T> queryPage(P params) {
+		params.initPagination();
+		int total = getDao().queryPageCount(params);
+		List<T> list = getDao().queryPage(params);
+		Page<T> page = new Page<T>();
+		page.setResult(list);
+		page.setTotalCount(total);
+		page.setCurrentPage(params.getCurrPage());
+		return page;
 	}
 
 }

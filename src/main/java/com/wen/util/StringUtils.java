@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -94,6 +95,26 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			return new String[] {};
 		return args.trim().split(splitChart);
 	}
+	
+	/**
+	 * 格式化字符串, abc {aaa} efg {bbb}, {aaa}
+	 * map={aaa=123,bbb=456}
+	 * 结果: abc 123 efg 456, 123
+	 * @param param
+	 * @param map
+	 * @return
+	 */
+	public static String formatReplace(String param,Map<String,String> map){
+		if(isNotBlank(param) && map!=null){
+			String ret = param;
+			for(Map.Entry<String, String> en : map.entrySet()){
+				ret = ret.replace("{"+en.getKey()+"}", en.getValue());
+			}
+			return ret;
+		}
+		return param;
+	}
+	
 
 	public static void main(String[] args) {
 
@@ -106,6 +127,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		System.out.println(sss);
 		System.out.println(first);
 		System.out.println(end);
+		String str = "abc {aaa} efg {bbb}, {aaa}";
+		Map<String, String> map = StringToMap.convert("aaa=123","bbb=456");
+		System.out.println(formatReplace(str, map)); 
 
 	}
 }

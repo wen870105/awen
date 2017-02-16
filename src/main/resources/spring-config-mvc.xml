@@ -36,5 +36,7 @@
 				<prop key="org.springframework.validation.BindException">error/400</prop>
             </props>  
 		</property>  
-    </bean> 
+    </bean>
+    
+<!--     <mvc:default-servlet-handler/> -->
 </beans>

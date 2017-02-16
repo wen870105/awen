@@ -39,7 +39,8 @@
 	<!-- 集成Mybatis -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="masterDataSource" />
-		<property name="configLocation" value="classpath:sqlmap/sqlmap-config.xml" />
+		<property name="typeAliasesPackage" value="com.tj.platform.order.domain,com.wen.domain"></property>
+		<property name="mapperLocations" value="classpath*:sqlmap/mapper/*.xml" />
 	</bean>
 
 	<bean id="sqlTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -53,7 +54,7 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.wen.dao" />
-		<property name="annotationClass" value="com.wen.dao.BatisRepository"/>
+<!-- 		<property name="annotationClass" value="com.wen.dao.BatisRepository"/> -->
 		<property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
 	</bean>  
 
