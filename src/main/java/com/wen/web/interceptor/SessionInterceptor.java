@@ -19,7 +19,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //		String s = WebUtils.readLoginToken(request);
-		logger.info(handler.toString());
+//		logger.info(handler.toString());
 		return super.preHandle(request, response, handler);
 	}
 }

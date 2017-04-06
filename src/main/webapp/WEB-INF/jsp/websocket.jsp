@@ -7,9 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/awen/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		WebSocket.prototype._send = WebSocket.prototype.send;
+		WebSocket.prototype.send = function(t){
+		    console.log('send: ' + t);
+		    return this._send(t);
+		}
 		var ws;
 		$("#login").click(function(){
 			var target = $("#url").val();//"ws://127.0.0.1/websocket/testWsAnnotation";
@@ -62,7 +67,7 @@
 </script>
 </head>
 <body>
-<input type="text" id="url" value="ws://127.0.0.1:8000/awen/handler" style="width: 350px;">
+<input type="text" id="url" value="ws://127.0.0.1:8280/awen/handler" style="width: 350px;">
 <div>
 	<textarea id="msg" rows="5" cols="45"></textarea>
 	<input type="button" id="send" value="send">

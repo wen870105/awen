@@ -2,6 +2,7 @@ package com.wen.web;
 
 import java.io.File;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,8 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wen.domain.ExportWen;
+import com.wen.domain.MerchantCallOut;
 import com.wen.domain.base.Page;
+import com.wen.export.User;
 import com.wen.service.ExportWenService;
+import com.wen.service.MerchantCallOutService;
+import com.wen.service.UserServiceImpl;
 import com.wen.web.socket.TestWebScoketMap;
 
 @Controller
@@ -27,11 +32,78 @@ public class IndexAction {
 	private static final Logger logger = LoggerFactory.getLogger(IndexAction.class);
 	@Autowired
 	private ExportWenService exportWenService;
+	@Autowired
+	private UserServiceImpl UserService;
+	@Autowired
+	private MerchantCallOutService merchantCallOutService;
 	
 	private static int counter = 1;
 	@RequestMapping("")
 	public String index() {
+		logger.info("test");
+		User u = new User();
+		u.setName("query");
+		UserService.test(u);
 		return "index";
+	}
+	
+	int i = 0;
+	@ResponseBody
+	@RequestMapping("test222")
+	public Object test222() {
+		long start = System.currentTimeMillis();
+		int threadCounter =10;
+		final CountDownLatch latch=new CountDownLatch(threadCounter*2);//两个工人的协作  
+		ExecutorService exec = Executors.newFixedThreadPool(threadCounter*2);
+
+		//修改总页数
+		for(int i=0;i<threadCounter;i++){
+			final int temp = i;
+			exec.execute(new Runnable() {
+
+				@Override
+				public void run() {
+					List<MerchantCallOut> list = merchantCallOutService. queryUpdate(387L, 1591, 1);
+					latch.countDown();
+					System.out.println("update : " + list.size() + "__" + latch.getCount());
+				}
+				
+			});	
+			
+			exec.execute(new Runnable() {
+
+				@Override
+				public void run() {
+					MerchantCallOut query = new MerchantCallOut();
+					if(temp%2==0){
+						query.setPhone("18113025608");	
+					}else{
+						query.setPhone("18382479394");	
+					}
+					
+					List<MerchantCallOut> list = merchantCallOutService.findList_(query);
+					latch.countDown();
+					System.out.println("find : " + list.size() + "__" + latch.getCount());
+					
+				}
+			});	
+		}
+
+
+		exec.shutdown();
+		try {
+			latch.await();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		logger.info("结束当前任务用时:{}ms {}", (System.currentTimeMillis()-start),counter);
+		return "ok";
+	}
+	
+	@RequestMapping("websocket")
+	public String websocket() {
+		logger.info("test");
+		return "websocket";
 	}
 	
 	@ResponseBody

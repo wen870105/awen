@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- dubbo应用属主配置 -->
+    <dubbo:application name="awen" owner="tj-plateform" organization="dubbo" logger="slf4j"/>
+
+    <!-- dubbo服务的注册地址（一般使用zookeeper注册服务），通俗的说就是把接口和方法的定义存在一个地方 -->
+    <dubbo:registry address="${regitry_address}"/>
+
+
+    <!-- 使用原生的dubbo协议 -->
+    <dubbo:protocol name="dubbo" serialization="dubbo" port="${dubbo_port}"/>
+    <dubbo:provider timeout="5000" connections="50" />
+
+
+	<dubbo:service interface="com.wen.export.UserService" ref="userServiceImpl"></dubbo:service>
+	
+</beans>

@@ -24,6 +24,10 @@
 		<bean class="com.wen.web.interceptor.SessionInterceptor" />
 	</mvc:interceptors>
 
+	<bean id="fastJsonMessageConverter"
+		class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+	</bean>
+	
     <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
     	<property name="prefix" value="/WEB-INF/jsp/" />

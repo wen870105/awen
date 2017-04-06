@@ -39,7 +39,7 @@
 	<!-- 集成Mybatis -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="masterDataSource" />
-		<property name="typeAliasesPackage" value="com.tj.platform.order.domain,com.wen.domain"></property>
+		<property name="typeAliasesPackage" value="com.wen.domain"></property>
 		<property name="mapperLocations" value="classpath*:sqlmap/mapper/*.xml" />
 	</bean>
 

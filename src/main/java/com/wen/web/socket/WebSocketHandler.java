@@ -26,6 +26,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		TestWebScoketMap.map.put(session.getId(), session);
+		System.out.println("session size = " + TestWebScoketMap.map.size());
 		logger.info("建立websocket");
 	}
 
