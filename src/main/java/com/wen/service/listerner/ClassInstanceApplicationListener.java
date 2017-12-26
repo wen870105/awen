@@ -13,12 +13,11 @@ import org.springframework.stereotype.Component;
  * @CreatDate: 2016年5月27日
  */
 @Component
-public class TJApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
-	private Log logger = LogFactory.getLog(TJApplicationListener.class);
+public class ClassInstanceApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
+	private Log logger = LogFactory.getLog(ClassInstanceApplicationListener.class);
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-		System.out.println(event);
 		logger.info("spring 启动完成,当前所有的实例名称和类型:");
 		ApplicationContext fac = event.getApplicationContext();
 		String[] arr = fac.getBeanDefinitionNames();

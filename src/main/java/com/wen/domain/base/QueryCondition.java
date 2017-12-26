@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2017-06-26 com.wen All rights reserved.
+ * 本软件源代码版权归----所有,未经许可不得任意复制与传播.
+ * 2017-06-26 生成于wCodeMaker wnick123@gmail.com
+ */
 package com.wen.domain.base;
 
 import java.io.Serializable;
@@ -7,14 +12,11 @@ import java.util.Map;
 
 /**
  * 基础组件不建议修改
- * @Author: Wen
- * @CreatDate: 2015年9月28日
+ * @Author: wEn
+ * @CreatDate: 2017-06-26
  * @Version:
  */
-public class QueryCondition  implements Serializable{
-	/**
-	 * 
-	 */
+public class QueryCondition implements Serializable{
 	private static final long serialVersionUID = -4601897306615723268L;
 	
 	// 第几页

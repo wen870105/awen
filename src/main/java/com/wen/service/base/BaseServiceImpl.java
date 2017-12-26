@@ -1,66 +1,92 @@
+/*
+ * Copyright (c) 2017-06-26 com.wen All rights reserved.
+ * 本软件源代码版权归----所有,未经许可不得任意复制与传播.
+ * 2017-06-26 生成于wCodeMaker wnick123@gmail.com
+ */
 package com.wen.service.base;
 
 import java.util.List;
 
 import com.wen.dao.base.BaseDao;
-import com.wen.domain.base.BaseDomain;
 import com.wen.domain.base.Page;
 
+
 /**
- * 
- * @author Wen
- * @CreatDate: 2016年5月20日
- */
-/**
- * @author Wen
- * @CreatDate: 2016年5月20日
- * @param
+ * 基础方法不建议修改,如需修改请修改对应的子类
+ * @author wEn
+ * @CreatDate: 2017-06-26 
  */
 public class BaseServiceImpl<T> implements BaseService<T> {
 
 	@Override
-	public T getById_(Long id) {
-		return getDao().getById_(id);
+	public void add(T t) {
+		getDao().add(t);
 	}
 
 	@Override
-	public void add_(T t) {
-		getDao().add_(t);
+	public int deleteByIds(long[] ids) {
+		return getDao().deleteByIds(ids);
 	}
 
 	@Override
-	public int update_(T t) {
-		return getDao().update_(t);
+	public int deleteByCondtion(T t) {
+		return getDao().deleteByCondtion(t);
 	}
 
 	@Override
-	public List<T> findList_(Object t) {
-		return getDao().findList_(t);
+	public int updateById(T t) {
+		return getDao().updateById(t);
 	}
 
 	@Override
-	public void delete_(Long id) {
-		getDao().delete_(id);
+	public T selectById(long id) {
+		return getDao().selectById(id);
+	}
+
+	@Override
+	public T selectOne(T t) {
+		return getDao().selectOne(t);
+	}
+
+	@Override
+	public List<T> selectList(T t) {
+		return getDao().selectList(t);
+	}
+
+	@Override
+	public int selectListCount(T t) {
+		return getDao().selectListCount(t);
+	}
+
+	@Override
+	public List<T> selectByIds(long[] ids) {
+		return getDao().selectByIds(ids);
 	}
 
 	/**
 	 * 子类重写
 	 */
 	@Override
-	public BaseDao getDao() {
-		throw new IllegalArgumentException("当前Service的BaseDao为空");
+	public BaseDao<T> getDao() {
+		throw new RuntimeException("当前Service的BaseDao为空");
 	}
 
 	@Override
-	public <P extends BaseDomain> Page<T> queryPage(P params) {
-		params.initPagination();
-		int total = getDao().queryPageCount(params);
-		List<T> list = getDao().queryPage(params);
-		Page<T> page = new Page<T>();
-		page.setResult(list);
-		page.setTotalCount(total);
-		page.setCurrentPage(params.getCurrPage());
+	public Page<T> selectPage(T condtion, Page<T> page) {
+		try {
+			Class<?> clz = condtion.getClass();
+			clz.getMethod("setStartIndex", Integer.class).invoke(condtion, page.getStartIndex());
+			clz.getMethod("setEndIndex", Integer.class).invoke(condtion, page.getEndIndex());
+		} catch (Exception e) {
+			throw new IllegalArgumentException("设置分页参数失败", e);
+		}
+		int size = getDao().selectListCount(condtion);
+		if(size <= 0) {
+			return page;
+		}
+		page.setTotalCount(size);
+		page.setResult(getDao().selectList(condtion));
 		return page;
 	}
-
+	
 }

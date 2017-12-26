@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.wen</groupId>
 	<artifactId>awen</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 
 	<!-- 多环境部署 -->
@@ -44,11 +44,21 @@
 	
 	
 	<properties>
+		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
+        <!-- 编译时的编码 -->  
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
+        
 		<spring.version>4.3.4.RELEASE</spring.version>
 		<slf4j.version>1.6.4</slf4j.version>
 	</properties>
 
 	<dependencies>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.ly</groupId> -->
+<!-- 			<artifactId>dubbo</artifactId> -->
+<!-- 			<version>3.1.5.RELEASE</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 		    <groupId>com.alibaba</groupId>
 		    <artifactId>dubbo</artifactId>
@@ -258,29 +268,13 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>2.9</version>
-		</dependency>	
-
-		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>dubbo</artifactId>
-		    <version>2.5.3</version>
-		    <exclusions>
-		    	<exclusion>
-					<artifactId>spring</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-		    </exclusions>
 		</dependency>
+
 		<dependency>
 				<groupId>javax.validation</groupId>
 				<artifactId>validation-api</artifactId>
 				<version>1.0.0.GA</version>
 			</dependency>
-		<dependency>
-			<groupId>testdubboexport</groupId>
-			<artifactId>com.wen.export</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<dependency>
 			<groupId>com.esotericsoftware.kryo</groupId>
 			<artifactId>kryo</artifactId>
@@ -357,7 +351,22 @@
 			<version>2.11.1</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.googlecode.rapid-framework</groupId>
+			<artifactId>rapid-core</artifactId>
+			<version>4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.rapid-framework</groupId>
+			<artifactId>rapid-generator-template</artifactId>
+			<version>4.0</version>
+		</dependency>
 	</dependencies>
 	
 	<build>
@@ -367,8 +376,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>  
