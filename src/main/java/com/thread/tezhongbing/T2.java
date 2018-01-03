@@ -2,7 +2,7 @@
  * LY.com Inc.
  * Copyright (c) 2004-2017 All Rights Reserved.
  */
-package com.wen.web;
+package com.thread.tezhongbing;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.locks.Condition;
@@ -55,11 +55,11 @@ public class T2 {
         T3 p1 = new T3(false);
         T3 p2 = new T3(true);
         new Thread(p1, "基数").start();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         new Thread(p2, "偶数").start();
       
     }

@@ -17,8 +17,8 @@ public class Consumer implements Runnable {
 
 		Random random = new Random();
 
-		for (String message = drop.take();!message.equals("DONE");message = drop.take()) {
-System.out.println(11);
+		for (String message = drop.take(); !message.equals("DONE"); message = drop.take()) {
+			System.out.println(11);
 			System.out.format("MESSAGE RECEIVED: %s%n", message);
 
 			try {

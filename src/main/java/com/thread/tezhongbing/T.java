@@ -2,7 +2,7 @@
  * LY.com Inc.
  * Copyright (c) 2004-2017 All Rights Reserved.
  */
-package com.wen.web;
+package com.thread.tezhongbing;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -29,10 +29,10 @@ public class T {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-//                    for(int j = 0 ; j < 100 ; j++) {
-//                        index++;
-//                        TEST_INTEGER.incrementAndGet();
-//                    }
+                    for(int j = 0 ; j < 100 ; j++) {
+                        index++;
+                        TEST_INTEGER.incrementAndGet();
+                    }
                  }
              };
              threads[i].start();
