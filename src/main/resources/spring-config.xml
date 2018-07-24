@@ -16,8 +16,10 @@
         http://www.springframework.org/schema/task/spring-task-3.0.xsd"
 	default-lazy-init="true">
 
-<context:component-scan base-package="com.wen.service,com.wen.dao,com.wen.listerner" />
-<!-- 	<context:annotation-config /> -->
+<context:component-scan base-package="com.wen.dao,com.wen.service,com.wen.util" />
+
+	<context:annotation-config />
+	<aop:aspectj-autoproxy/>
 	<!-- 	
 	
 
@@ -56,7 +58,7 @@
 	<import resource="spring-config-jdbc.xml" />
 	<import resource="spring-config-service.xml" />
 	<import resource="spring-dubbo-provider.xml" />
-	<import resource="spring-redis.xml" />
+<!-- 	<import resource="spring-redis.xml" /> -->
 	
 <!-- 	<import resource="spring-mongodb.xml" /> -->
 
