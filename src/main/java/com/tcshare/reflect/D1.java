@@ -8,6 +8,7 @@ public class D1 {
     }
     
     private void test1() throws Exception{
+//        Class<?> clazz = Class.forName("com.ly.com.xxx");
         BeanObj obj = BeanObj.class.newInstance();
         obj.setName("tc");
         System.out.println(obj.toString());

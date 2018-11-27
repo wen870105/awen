@@ -1,19 +1,13 @@
 package com.wen.service.interceptor;
-import java.lang.reflect.Method;
-
-import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
-
-import com.wen.web.IndexAction;
 
 /**
  * @version 1.0.0
@@ -24,7 +18,7 @@ import com.wen.web.IndexAction;
 @Aspect
 @Service
 public class AccessControlAspect implements ApplicationContextAware{
-	private static final Logger logger = LoggerFactory.getLogger(IndexAction.class);
+	private static final Logger logger = LoggerFactory.getLogger(AccessControlAspect.class);
     ApplicationContext applicationContext;
 
     @Override

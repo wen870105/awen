@@ -27,6 +27,12 @@ public class Result<T> {
     }
 
     public static void main(String[] args) {
+        String s = "{\"data\":{\"name\":\"data1\"},\"success\":true}";
+        
+        
+        
+        
+        
         InnerData1 i1 = new InnerData1();
         i1.setName("data1");
         Result<InnerData1> r1 = new Result<>();
@@ -36,10 +42,10 @@ public class Result<T> {
         TypeReference<Result<InnerData1>> typeReference = new TypeReference<Result<InnerData1>>(){};
         
         Type type = ((ParameterizedType) typeReference.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-        System.out.println(type);
+        System.out.println("type=" +type);
         System.out.println(JSON.toJSONString(r1));
 
-        String s = "{\"data\":{\"name\":\"data1\"},\"success\":true}";
+        
 
         Result<InnerData1> ret = JSON.parseObject(s,new TypeReference<Result<InnerData1>>(){} );
         InnerData1 retInner1 = ret.getData();

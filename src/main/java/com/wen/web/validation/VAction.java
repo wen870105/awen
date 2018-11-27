@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.wen.web.IndexAction;
-
 /**
  * 
  * @author wsy48420
@@ -27,7 +25,7 @@ import com.wen.web.IndexAction;
  */
 @Controller
 public class VAction {
-    private static final Logger logger = LoggerFactory.getLogger(IndexAction.class);
+    private static final Logger logger = LoggerFactory.getLogger(VAction.class);
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
