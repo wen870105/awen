@@ -11,14 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ly.flight.intl.forbidpool.client.service.ForbidpoolService;
 import com.wen.domain.UserTest;
 import com.wen.domain.base.Page;
 import com.wen.service.UserTestService;
 import com.wen.util.SpringContextUtils;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/index2")
 public class IndexAction2 {
 	private static final Logger logger = LoggerFactory.getLogger(IndexAction2.class);
 

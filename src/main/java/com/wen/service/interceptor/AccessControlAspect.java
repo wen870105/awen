@@ -10,10 +10,10 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
 /**
- * @version 1.0.0
- * @author: zhangyk
- * @date: 2017/9/15 23:10
- * @descrpiton:
+ * 
+ * 
+ * @author wsy48420
+ * @version $Id: AccessControlAspect.java, v 0.1 2018年11月27日 下午5:19:09 wsy48420 Exp $
  */
 @Aspect
 @Service
@@ -36,10 +36,8 @@ public class AccessControlAspect implements ApplicationContextAware{
 //        	logger.warn("not set controller!continue process!method:{}!",methodSignature.toString());
 //            return pjp.proceed();
 //        }
-        System.out.println("hahahahahah");
-        pjp.proceed();
-        return null;
-
+        logger.info("拦截器");
+        return pjp.proceed();
 //        AccessController accessController = applicationContext.getBean(controllerName, AccessController.class);
 //        if( accessController == null ){
 //            log.warn("not found controller bean!controller name:{}!",controllerName);
