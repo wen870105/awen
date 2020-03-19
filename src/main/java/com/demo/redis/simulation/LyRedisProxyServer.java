@@ -7,6 +7,11 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 分片代理模拟
+ * @author wsy48420
+ *
+ */
 public class LyRedisProxyServer {
 	private static List<String> servers = new ArrayList(5);
 	static {

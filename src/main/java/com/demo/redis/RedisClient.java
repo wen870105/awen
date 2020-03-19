@@ -1,5 +1,7 @@
 package com.demo.redis;
 
+import java.util.List;
+
 import redis.clients.jedis.Jedis;
 
 public class RedisClient {
@@ -11,11 +13,18 @@ public class RedisClient {
 
 	public static void jedis() {
 
-		Jedis j = new Jedis(IP, 6378);
+		Jedis j = new Jedis(IP, 6379);
 
-		j.set("key1", "value");
+		j.set("key122222e", "value");
 		
-//		j.hset("map", "key1", "v1");
+		j.lpush("keyList", "1");
+		j.lpush("keyList", "2");
+		j.lpush("keyList", "3");
+		j.lpush("keyList", "4");
+	List<String> lrange = j.lrange("keyList", 0, 2);
+		System.out.println(lrange);
+//		hmap key_m sk v
+//		j.hset("key_m", "sk", "v");
 //		j.hset("map", "key2", "v2");
 		// System.out.println(j.get("key1"));
 

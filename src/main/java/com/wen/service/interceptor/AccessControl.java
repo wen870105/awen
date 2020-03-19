@@ -7,25 +7,25 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @version 1.0.0
- * @author: zhangyk
- * @date: 2017/9/13 21:35
- * @descrpiton: 提供方法级别的资源控制
+ * 提供方法级别的资源控制
+ * 
+ * @author wsy48420
+ * @version $Id: AccessControl.java, v 0.1 2018年11月27日 下午5:19:19 wsy48420 Exp $
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 @Documented
 public @interface AccessControl {
 
-	/**
-	 * 资源名称
-	 *
-	 * @return
-	 */
-	String resource();
+    /**
+     * 资源名称
+     *
+     * @return
+     */
+    String resource();
 
-	/**
-	 * 访问控制器bean名称,需要实现AccessController接口
-	 */
-	String controller() default "";
+    /**
+     * 访问控制器bean名称,需要实现AccessController接口
+     */
+    String controller() default "";
 }

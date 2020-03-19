@@ -20,8 +20,8 @@ public class LyRedisClient {
 
 	public static void main(String[] args) throws Exception {
 		LyRedisClient client = new LyRedisClient();
-		String ret = client.set("test", "hahah");
-		String ret2 = client.get("test");
+		String ret = client.set("test2", "haha\r\nh");
+		String ret2 = client.get("test2");
 		
 		System.out.println(ret2);
 	}
