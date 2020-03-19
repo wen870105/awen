@@ -40,36 +40,43 @@
 			</properties>
 		</profile>
 	</profiles>
-	
-	
-	
+
+
+
 	<properties>
-		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
-        <!-- 编译时的编码 -->  
-        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
-        
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- 编译时的编码 -->
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+
 		<spring.version>4.3.4.RELEASE</spring.version>
 		<slf4j.version>1.6.4</slf4j.version>
 	</properties>
 
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.ly</groupId> -->
-<!-- 			<artifactId>dubbo</artifactId> -->
-<!-- 			<version>3.1.5.RELEASE</version> -->
-<!-- 		</dependency> -->
 		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>dubbo</artifactId>
-		    <version>2.5.3</version>
-		    <exclusions>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>com.ly</groupId> -->
+		<!-- <artifactId>dubbo</artifactId> -->
+		<!-- <version>3.1.5.RELEASE</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
 				<exclusion>
 					<artifactId>spring</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>	
+		</dependency>
 
 		<!-- Spring core & mvc -->
 		<dependency>
@@ -106,7 +113,7 @@
 			<artifactId>spring-tx</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- if you enable @AspectJ style AOP in spring. -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -176,17 +183,17 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.10</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>commons-beanutils</groupId>
-		    <artifactId>commons-beanutils</artifactId>
-		    <version>1.9.2</version>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.2</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>3.4</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
 		</dependency>
 
 		<dependency>
@@ -204,66 +211,66 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.5.1</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		    <version>1.2.12</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.12</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi</artifactId>
-		    <version>3.9</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi-ooxml</artifactId>
-		    <version>3.9</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
 		</dependency>
-		
-		
+
+
 		<!-- mongodb -->
-		<dependency>  
-            <groupId>org.mongodb</groupId>  
-            <artifactId>mongo-java-driver</artifactId>
-            <version>3.2.2</version>  
-        </dependency>  
-   
 		<dependency>
-		    <groupId>org.springframework.data</groupId>
-		    <artifactId>spring-data-mongodb</artifactId>
-		    <version>1.2.0.RELEASE</version>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-websocket</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.log4mongo</groupId>
-		    <artifactId>log4mongo-java</artifactId>
-		    <version>0.7.4</version>
+			<groupId>org.log4mongo</groupId>
+			<artifactId>log4mongo-java</artifactId>
+			<version>0.7.4</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -271,10 +278,10 @@
 		</dependency>
 
 		<dependency>
-				<groupId>javax.validation</groupId>
-				<artifactId>validation-api</artifactId>
-				<version>1.0.0.GA</version>
-			</dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
 		<dependency>
 			<groupId>com.esotericsoftware.kryo</groupId>
 			<artifactId>kryo</artifactId>
@@ -285,7 +292,7 @@
 			<artifactId>kryo-serializers</artifactId>
 			<version>0.26</version>
 		</dependency>
-	<dependency>
+		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
 			<version>3.4.6</version>
@@ -300,12 +307,12 @@
 			<artifactId>jedis</artifactId>
 			<version>2.7.3</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.tj</groupId> -->
-<!-- 			<artifactId>tj-common-zookeeper</artifactId> -->
-<!-- 			<version>1.0</version> -->
-<!-- 		</dependency> -->
-		
+		<!-- <dependency> -->
+		<!-- <groupId>com.tj</groupId> -->
+		<!-- <artifactId>tj-common-zookeeper</artifactId> -->
+		<!-- <version>1.0</version> -->
+		<!-- </dependency> -->
+
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
@@ -356,7 +363,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.2.0.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.googlecode.rapid-framework</groupId>
 			<artifactId>rapid-core</artifactId>
@@ -367,8 +374,13 @@
 			<artifactId>rapid-generator-template</artifactId>
 			<version>4.0</version>
 		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>5.0.0.Alpha2</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -380,14 +392,14 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>  
-                <groupId>org.apache.maven.plugins</groupId>  
-                <artifactId>maven-war-plugin</artifactId>  
-                <version>2.1.1</version>  
-                <configuration>
-                	<warName>awen</warName>  
-                </configuration>  
-            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<warName>awen</warName>
+				</configuration>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>

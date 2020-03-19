@@ -28,7 +28,7 @@ import com.alibaba.fastjson.JSON;
 public class JedisCache implements Cache {
 
     private final static Log LOGGER = LogFactory.getLog(JedisCache.class);
-    @Resource(name="shardedJedisPool")  
+//    @Resource(name="shardedJedisPool")  
     private ShardedJedisPool jedisPool; // 池化管理jedis链接池
 
     private Integer selectDB = 1;
