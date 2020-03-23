@@ -1,7 +1,10 @@
 package com.test.migu.request;
 
+import java.util.List;
+
 /**
  * 业务分析
+ * 
  * @author wen
  * @date 2020年3月19日
  */
@@ -13,7 +16,7 @@ public class BizAnalysisRequestDTO extends BaseRequestDTO {
 	/**
 	 * 查询类型,目前只有detail,group两个值
 	 */
-	private String type;
+	private List<String> columns;
 
 	public String getQuery() {
 		return query;
@@ -23,12 +26,12 @@ public class BizAnalysisRequestDTO extends BaseRequestDTO {
 		this.query = query;
 	}
 
-	public String getType() {
-		return type;
+	public List<String> getColumns() {
+		return columns;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setColumns(List<String> columns) {
+		this.columns = columns;
 	}
 
 }

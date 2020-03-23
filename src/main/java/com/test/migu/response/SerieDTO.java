@@ -17,6 +17,13 @@ public class SerieDTO {
 	 */
 	private List<String> data;
 
+	public SerieDTO() {
+	}
+
+	public SerieDTO(List<String> data) {
+		this.data = data;
+	}
+
 	public String getName() {
 		return name;
 	}

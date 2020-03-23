@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * 业务分析字段详情
+ * 
  * @author wen
  * @date 2020年3月19日
  */
@@ -19,9 +20,14 @@ public class BizAnalysisDetailRequestDTO extends BaseRequestDTO {
 	private List<String> columns;
 
 	/**
-	 * 查询的列
+	 * 分页页码,起始页,默认值都是1
 	 */
-	private String queryColumn;
+	private Integer pageIndex = 1;
+
+	/**
+	 * 分页大小,默认是20
+	 */
+	private Integer pageSize = 20;
 
 	public String getQuery() {
 		return query;
@@ -39,14 +45,20 @@ public class BizAnalysisDetailRequestDTO extends BaseRequestDTO {
 		this.columns = columns;
 	}
 
-	public String getQueryColumn() {
-		return queryColumn;
+	public Integer getPageIndex() {
+		return pageIndex;
 	}
 
-	public void setQueryColumn(String queryColumn) {
-		this.queryColumn = queryColumn;
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
 	}
 
-	
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 }

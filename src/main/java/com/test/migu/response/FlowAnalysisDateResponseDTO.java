@@ -15,7 +15,7 @@ public class FlowAnalysisDateResponseDTO {
 	/**
 	 * 具体数值
 	 */
-	private List<String> valList;
+	private List<SerieDTO> series;
 
 	public List<String> getColumns() {
 		return columns;
@@ -25,12 +25,14 @@ public class FlowAnalysisDateResponseDTO {
 		this.columns = columns;
 	}
 
-	public List<String> getValList() {
-		return valList;
+	public List<SerieDTO> getSeries() {
+		return series;
 	}
 
-	public void setValList(List<String> valList) {
-		this.valList = valList;
+	public void setSeries(List<SerieDTO> series) {
+		this.series = series;
 	}
+
+	
 
 }

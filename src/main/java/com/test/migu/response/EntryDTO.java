@@ -18,7 +18,7 @@ public class EntryDTO {
 	/**
 	 * 数值
 	 */
-	private String val;
+	private String value;
 
 	public String getType() {
 		return type;
@@ -36,12 +36,12 @@ public class EntryDTO {
 		this.name = name;
 	}
 
-	public String getVal() {
-		return val;
+	public String getValue() {
+		return value;
 	}
 
-	public void setVal(String val) {
-		this.val = val;
+	public void setValue(String value) {
+		this.value = value;
 	}
 
 }
