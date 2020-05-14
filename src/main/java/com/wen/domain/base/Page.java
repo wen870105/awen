@@ -1,12 +1,17 @@
+/*
+ * Copyright (c) 2017-06-26 com.wen All rights reserved.
+ * 本软件源代码版权归----所有,未经许可不得任意复制与传播.
+ * 2017-06-26 生成于wCodeMaker wnick123@gmail.com
+ */
 package com.wen.domain.base;
 
 import java.util.List;
 
 /**
  * 分页对象
- * @author Wen
+ * @author wEn
  *
- * @CreateDate 2017年1月18日
+ * @CreateDate 2017-06-26
  */
 public class Page<T> {
 	//初始化size
